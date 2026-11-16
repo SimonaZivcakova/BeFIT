@@ -1,0 +1,503 @@
+@font-face {
+    font-family: 'Montserrat'; /* Názov, pod ktorým budete font volať v CSS */
+    src: url('fonts/Montserrat-Regular.ttf') format('ttf'); /* Správna cesta k súboru */
+    font-weight: normal; /* Definícia hrúbky (normal, bold, 400, 700...) */
+    font-style: normal;  /* Definícia štýlu (normal, italic) */
+    font-display: swap;  /* Zabezpečí, že text sa zobrazí hneď s náhradným fontom, kým sa tento stiahne */
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/Oswald-Regular.ttf') format('truetype');
+    font-weight: normal; 
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+img{
+    max-width: 100%;
+}
+
+body{
+    font-family: Montserrat, Verdana;
+    background-color: #111315;
+    color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3 {
+    font-family: Oswald;
+}
+
+.logo > img{
+    width: 50px;
+    
+}
+
+.logo span{
+    color: white;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    gap: 15px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #F5F5F5;
+    height: 40px;
+    padding: 0 18px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #B6FF36;
+    color: #111315;
+    box-shadow: 0 0 12px rgba(182, 255, 54, 0.25);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #24282B;
+    border-radius: 30px;
+    width: 80%;
+    margin: 10px auto 10px auto;
+    
+}
+
+.banner img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+}
+
+.white{
+    color: #F5F5F5;
+    font-size: 4em;
+    font-family: Oswald;
+    font-weight: bold;
+}
+
+.green {
+    color: #B6FF36;
+    font-size: 4em;
+    font-family: Oswald;
+    font-weight: bold;
+}
+
+#text{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(36, 40, 43, 0.9);
+    width: fit-content;
+    padding: 20px 25px;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #24282B;
+    margin-top: 60px;
+    padding: 40px 10% 15px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer h2 {
+    color: #B6FF36;
+}
+
+footer h3 {
+    color: #B6FF36;
+}
+
+footer a {
+    color: #F5F5F5;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #B6FF36;
+}
+
+.footer-bottom {
+    border-top: 1px solid #45494C;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+    color: #AAAAAA;
+    font-size: 13px;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 80%;
+    margin: 80px auto;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h1 {
+    font-size: 3em;
+}
+
+.about-text p {
+    line-height: 1.8;
+    color: #CCCCCC;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #B6FF36;
+    color: #111315;
+    padding: 14px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.active{
+    background-color: #B6FF36;
+    color: #111315;
+    box-shadow: 0 0 12px rgba(182, 255, 54, 0.25);
+    border: solid 2px #111315;
+}
+
+.cennik{
+    border-collapse: collapse;
+}
+
+.cennik td{
+    padding: 5px 10px;
+    border: solid 1px #45494C;
+}
+
+#treneri-container{
+    display: flex;
+    
+}
+
+.trener{
+    border: solid 1px #45494C;
+    padding: 20px;
+    width: 200px;
+    margin: 10px;
+}
+
+.trener h2{
+    color: #B6FF36;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.galeria img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.03);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 85%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.lightbox button {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.close {
+  top: 15px;
+  right: 25px;
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+.counter {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font-size: 16px;
+}
+
+
+/* TABLET */
+@media screen and (max-width: 900px) {
+
+    header {
+        width: 95%;
+    }
+
+    nav {
+        gap: 5px;
+        margin-right: 10px;
+    }
+
+    nav a {
+        padding: 0 10px;
+        font-size: 13px;
+    }
+
+    .logo > img {
+        width: 40px;
+    }
+
+    .about {
+        width: 90%;
+        gap: 25px;
+    }
+
+    .about-text h1 {
+        font-size: 2.5em;
+    }
+
+    .white,
+    .green {
+        font-size: 3em;
+    }
+
+    #text {
+        top: 25%;
+        left: 5%;
+    }
+
+    .footer-container {
+        gap: 25px;
+    }
+
+    #treneri-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+/* MOBIL */
+@media screen and (max-width: 600px) {
+
+
+    header {
+        width: 95%;
+        height: auto;
+        min-height: 60px;
+        padding: 10px;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 20px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    nav a {
+        height: 38px;
+        padding: 5px;
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .banner img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    #text {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        padding: 15px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .white,
+    .green {
+        font-size: clamp(1.7em, 7vw, 2.5em);
+    }
+
+
+    .about {
+        width: 90%;
+        margin: 40px auto;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    .about-text h1 {
+        font-size: 2em;
+    }
+
+    .about-text p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+
+    footer {
+        margin-top: 40px;
+        padding: 30px 7% 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+        width: 100%;
+    }
+
+    #treneri-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trener {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .galeria img {
+        height: 130px;
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox img {
+        max-width: 95%;
+        max-height: 75vh;
+    }
+
+    .lightbox button {
+        font-size: 30px;
+    }
+
+}
